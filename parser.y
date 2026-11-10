@@ -1,8 +1,3 @@
- //PREGUNTAR /* vacio */
- 
- 
- 
- 
  //  1: ZONA DE DECLARACIONES
  // PARTE 1.2: Cosas que necesitamos que esten en el .c
 %{
@@ -24,7 +19,6 @@
 %token <literal> literalTK
 %token fconstTK
 %token igualTK
-%token <cadena> nombreCteTK
 %token puntoYComaTK
 
  // Tokens del scanner de la Practica 1 (constTK, fconstTK, igualTK y literalTK ya est�n arriba)
@@ -97,7 +91,6 @@
 %token menorIgualTK
 %token mayorIgualTK
 %token distintoTK
-%token punteroTK
 
  //PARTE 2.3: Definiciones (algunas innecearias) de prioridades
 
