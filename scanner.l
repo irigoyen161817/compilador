@@ -5,6 +5,7 @@
  
 letraDR           [a-zA-Z]
 cifraDR             [0-9]
+identificadorBooleanoDR  b_({letraDR}|{cifraDR})+
 identificadorDR     {letraDR}({letraDR}|{cifraDR})*
 
 falsoDR           (?i:falso)
@@ -214,6 +215,9 @@ yDR               (?i:y)
 {falsoDR} {
     printf("(literalBooleanoTK, falso)\n");
 }
+{identificadorBooleanoDR} {
+    printf("(identificadorBooleanoTK, %s)\n", yytext);
+}
 {identificadorDR} {
     printf("(identificadorTK, %s)\n", yytext);
 }
@@ -297,9 +301,6 @@ yDR               (?i:y)
 }
 {distintoDR} {
     printf("(distintoTK, )\n");
-}
-{punteroDR} {
-    printf("(punteroTK, )\n");
 }
 [ \t\r\n]+ {
 }
