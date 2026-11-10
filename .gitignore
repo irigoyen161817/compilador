@@ -1,0 +1,9 @@
+*.tab.c
+*.tab.h
+*.output
+lex.yy.c
+*.o
+compilador
+scanner
+a.exe
+a.out
