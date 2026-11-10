@@ -1,4 +1,4 @@
- //PREGUNTAR %EMPTY
+ //PREGUNTAR /* vacio */
  
  
  
@@ -130,18 +130,18 @@ bloque_algV: bloqueV comentarioTK {}
 	;
 decl_globalesV: declaracion_tipoV decl_globalesV {}
 	| declaracion_cteV decl_globalesV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 decl_a_fV: accion_dV decl_a_fV {}
 	| funcion_dV decl_a_fV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 bloqueV: declaracionesV instruccionesV {}
 	;
 declaracionesV: declaracion_tipoV declaracionesV {}
 	| declaracion_cteV declaracionesV {}
 	| declaracion_varV declaracionesV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 
  //4.1.1
@@ -154,7 +154,7 @@ declaracion_varV: varTK lista_d_varV fvarTK puntoYComaTK {}
 
  //4.1.2
 lista_d_tipoV: identificadorTK igualTK d_tipoV puntoYComaTK lista_d_tipoV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 tipo_baseV: enteroTK {}
 	| realTK {}
@@ -175,16 +175,16 @@ expresion_tV: expresionV {}
 
  //4.1.3
 lista_d_cteV: identificadorTK igualTK literalTK puntoYComaTK lista_d_cteV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 lista_d_varV: lista_idV tipoVariableTK d_tipoV puntoYComaTK lista_d_varV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 lista_idV: identificadorTK separadorTK lista_idV {}
 	| identificadorTK {}
 	;
 lista_camposV: identificadorTK tipoVariableTK d_tipoV puntoYComaTK lista_camposV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 decl_ent_salV: decl_entV {}
 	| decl_entV decl_salV {}
@@ -248,7 +248,7 @@ asignacionV: operandoV asignacionTK expresionV {}
 alternativaV: siTK expresionV entoncesTK instruccionesV lista_opcionesV fsiTK {}
 	;
 lista_opcionesV: siNoSiTK expresionV entoncesTK instruccionesV lista_opcionesV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 iteracionV: it_cota_fijaV {}
 	| it_cota_expV {}
@@ -268,7 +268,7 @@ a_cabeceraV: identificadorTK parentesisAbiertoTK d_par_formV parentesisCerradoTK
 f_cabeceraV: identificadorTK parentesisAbiertoTK lista_d_varV parentesisCerradoTK devTK d_tipoV composicionSecuencialTK {}
 	;
 d_par_formV: d_p_formV composicionSecuencialTK d_par_formV {}
-	| %empty {}
+	| /* vacio */ {}
 	;
 d_p_formV: entTK lista_idV tipoVariableTK d_tipoV {}
 	| salTK lista_idV tipoVariableTK d_tipoV {}
