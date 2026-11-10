@@ -115,7 +115,7 @@
 
  //PARTE 2.4: Asignacion de traducciones a las variables
 
-%type <entero> listaDeclConstantesV  //para contar las que se definen
+//%type <entero> listaDeclConstantesV  //para contar las que se definen
 
 %%
 
@@ -169,6 +169,11 @@ d_tipoV: tuplaTK lista_camposV ftuplaTK {}
 	| refTK d_tipoV {}
 	| tipo_baseV {}
 	;
+expresion_tV: expresionV {}
+	| literalTK {}
+	;
+
+ //4.1.3
 lista_d_cteV: identificadorTK igualTK literalTK puntoYComaTK lista_d_cteV {}
 	| %empty {}
 	;
@@ -178,6 +183,9 @@ lista_d_varV: lista_idV tipoVariableTK d_tipoV puntoYComaTK lista_d_varV {}
 lista_idV: identificadorTK separadorTK lista_idV {}
 	| identificadorTK {}
 	;
+lista_camposV: identificadorTK tipoVariableTK d_tipoV puntoYComaTK lista_camposV {}
+	| %empty {}
+	;
 decl_ent_salV: decl_entV {}
 	| decl_entV decl_salV {}
 	| decl_salV {}
@@ -186,23 +194,6 @@ decl_entV: entTK lista_d_varV {}
 	;
 decl_salV: salTK lista_d_varV {}
 	;
-
- //Gramatica de juguete del ejemplo (ya no es alcanzable desde el axioma)
-declaracionConstantesV: constTK listaDeclConstantesV fconstTK{
-			printf("COMPILADOR: Se ha creado la tabla de constantes con %d constantes\n", $2);
-			}
-	;
-listaDeclConstantesV :  declaracionDeConstanteV {}
-	| listaDeclConstantesV puntoYComaTK listaDeclConstantesV {
-			$$= $1 + $3;
-		}
-	;
-declaracionDeConstanteV : nombreCteTK igualTK literalTK {
-			insertaConstante(&tc, $1, $3);
-		}
-	;
-
-
  //4.1.4
  expresionV: exp_aV {}
 	| exp_bV {}
@@ -226,7 +217,6 @@ exp_bV: exp_bV yTK exp_bV {}
 	| noTK exp_bV {}
 	| operandoV {}
 	| literalTK {} //comprobar el tipo de literal en {}
-	| literalTK {} //comprobal el tipo de literal en {}
 	| expresionV oprelV expresionV {}
 	| parentesisAbiertoTK exp_bV parentesisCerradoTK {}
 	;
