@@ -21,8 +21,8 @@ literalCadenaDR         '([^']|\/')*'
 comentarioDR            \{([^}]|\/\})*\}
 
 
-asignacionDR              ":="
-composicionSecuencialDR   ";"
+asignacionDR            ":="
+composicionSecuencialDR  ";"
 separadorDR             ","
 subrangoDR              ".."
 tipoVariableDR          ":"
@@ -43,8 +43,6 @@ mayorDR                 ">"
 menorIgualDR            "<="
 mayorIgualDR            ">="
 distintoDR              "<>"
-punteroDR               "^"
-
 
 accionDR    (?i:accion)
 algoritmoDR     (?i:algoritmo)

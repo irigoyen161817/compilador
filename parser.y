@@ -19,9 +19,7 @@
 %token <literal> literalTK
 %token fconstTK
 %token igualTK
-%token puntoYComaTK
-
- // Tokens del scanner de la Practica 1 (constTK, fconstTK, igualTK y literalTK ya est�n arriba)
+%token composicionSecuencialTK
 
  // Palabras reservadas
 %token accionTK
@@ -92,18 +90,25 @@
 %token mayorIgualTK
 %token distintoTK
 
+%token <entero>   literalEnteroTK
+%token <real>     literalRealTK
+%token <caracter> literalCaracterTK
+%token <cadena>   literalCadenaTK
  //PARTE 2.3: Definiciones (algunas innecearias) de prioridades
 
 %nonassoc constTK //hago no asociativo y de baja prioridad a constTK
 %right fconstTK //hago fcosntTK es mas prioritario que constTK y asociativo a derecha
-%left puntoYComaTK //Hago muy prioritario y asociativo a izquierdas al ;
+%left composicionSecuencialTK //Hago muy prioritario y asociativo a izquierdas al ;
 
  //PARTE 2.3: Creamos el union necesario para valores de flex y traducciones de bison
 
 %union{
 	char* cadena;
-	LiteralT literal;
 	int entero;
+	float real;
+	char caracter;
+	ValorBooleanoT booleano;
+	LiteralT literal;
 }
 
  //PARTE 2.4: Asignacion de traducciones a las variables
@@ -138,15 +143,15 @@ declaracionesV: declaracion_tipoV declaracionesV {}
 	;
 
  //4.1.1
-declaracion_tipoV: tipoTK lista_d_tipoV ftipoTK puntoYComaTK {}
+declaracion_tipoV: tipoTK lista_d_tipoV ftipoTK composicionSecuencialTK {}
 	;
-declaracion_cteV: constTK lista_d_cteV fconstTK puntoYComaTK {}
+declaracion_cteV: constTK lista_d_cteV fconstTK composicionSecuencialTK {}
 	;
-declaracion_varV: varTK lista_d_varV fvarTK puntoYComaTK {}
+declaracion_varV: varTK lista_d_varV fvarTK composicionSecuencialTK {}
 	;
 
  //4.1.2
-lista_d_tipoV: identificadorTK igualTK d_tipoV puntoYComaTK lista_d_tipoV {}
+lista_d_tipoV: identificadorTK igualTK d_tipoV composicionSecuencialTK lista_d_tipoV {}
 	| /* vacio */ {}
 	;
 tipo_baseV: enteroTK {}
@@ -156,7 +161,7 @@ tipo_baseV: enteroTK {}
 	| cadenaTK {}
 	;
 d_tipoV: tuplaTK lista_camposV ftuplaTK {}
-	| tablaTK inicioArrayTK expresion_tV subrangoTK finArrayTK deTK d_tipoV {}
+	| tablaTK inicioArrayTK expresion_tV subrangoTK expresion_tV finArrayTK deTK d_tipoV {}
 	| identificadorTK {}
 	| expresion_tV subrangoTK expresion_tV {}
 	| refTK d_tipoV {}
@@ -166,17 +171,23 @@ expresion_tV: expresionV {}
 	| literalTK {}
 	;
 
+literalV: literalEnteroTK   {}
+        | literalRealTK     {}
+        | literalCaracterTK {}
+        | literalCadenaTK   {}
+        | literalBooleanoTK {}
+        ;
  //4.1.3
-lista_d_cteV: identificadorTK igualTK literalTK puntoYComaTK lista_d_cteV {}
+lista_d_cteV: identificadorTK igualTK literalV composicionSecuencialTK lista_d_cteV {}
 	| /* vacio */ {}
 	;
-lista_d_varV: lista_idV tipoVariableTK d_tipoV puntoYComaTK lista_d_varV {}
+lista_d_varV: lista_idV tipoVariableTK d_tipoV composicionSecuencialTK lista_d_varV {}
 	| /* vacio */ {}
 	;
 lista_idV: identificadorTK separadorTK lista_idV {}
 	| identificadorTK {}
 	;
-lista_camposV: identificadorTK tipoVariableTK d_tipoV puntoYComaTK lista_camposV {}
+lista_camposV: identificadorTK tipoVariableTK d_tipoV composicionSecuencialTK lista_camposV {}
 	| /* vacio */ {}
 	;
 decl_ent_salV: decl_entV {}
@@ -201,7 +212,8 @@ exp_aV: exp_aV masTK exp_aV {}
 	| exp_aV divTK exp_aV {}
 	| parentesisAbiertoTK exp_aV parentesisCerradoTK {}
 	| operandoV {}
-	| literalTK {} //comprobar el tipo de literal en {}
+	| literalEnteroTK {}
+	| literalRealTK {}
 	| menosTK exp_aV {}
 	| masTK exp_aV {}
 	;
@@ -209,7 +221,7 @@ exp_bV: exp_bV yTK exp_bV {}
 	| exp_bV oTK exp_bV {}
 	| noTK exp_bV {}
 	| operandoV {}
-	| literalTK {} //comprobar el tipo de literal en {}
+	| literalBooleanoTK {}
 	| expresionV oprelV expresionV {}
 	| parentesisAbiertoTK exp_bV parentesisCerradoTK {}
 	;

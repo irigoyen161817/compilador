@@ -1,9 +1,3 @@
-Terminales no usados en la gramática
-
-    nombreCteTK
-    punteroTK
-
-
 La regla es inútil debido a los conflictos
 
    63 exp_bV: operandoV
@@ -188,203 +182,201 @@ Terminales con las reglas donde aparecen
     literalTK <literal> (259) 32 33 57 64
     fconstTK (260) 16
     igualTK (261) 18 33 69
-    nombreCteTK <cadena> (262)
-    puntoYComaTK (263) 15 16 17 18 33 35 39
-    accionTK (264) 92
-    algoritmoTK (265) 1
-    booleanoTK (266) 22
-    cadenaTK (267) 24
-    caracterTK (268) 23
-    continuarTK (269) 79
-    deTK (270) 26
-    devTK (271) 93 95
-    divTK (272) 54
-    entTK (273) 44 98
-    enteroTK (274) 20
-    entradaSalidaTK (275) 100
-    faccionTK (276) 92
-    falgoritmoTK (277) 1
-    ffuncionTK (278) 93
-    fmientrasTK (279) 90
-    fparaTK (280) 91
-    fsiTK (281) 85
-    ftipoTK (282) 15
-    ftuplaTK (283) 25
-    funcionTK (284) 93
-    fvarTK (285) 17
-    hacerTK (286) 90 91
-    hastaTK (287) 91
-    mientrasTK (288) 90
-    modTK (289) 53
-    noTK (290) 62
-    oTK (291) 61
-    paraTK (292) 91
-    realTK (293) 21
-    refTK (294) 29 76
-    salTK (295) 45 99
-    siTK (296) 85
-    tablaTK (297) 26
-    tipoTK (298) 15
-    tuplaTK (299) 25
-    varTK (300) 17
-    yTK (301) 60
-    identificadorTK <cadena> (302) 1 18 27 33 37 38 39 73 91 94 95 101 102
-    comentarioTK (303) 2 3
-    asignacionTK (304) 84 91
-    composicionSecuencialTK (305) 1 77 94 95 96
-    separadorTK (306) 37 103
-    subrangoTK (307) 26 28
-    tipoVariableTK (308) 35 39 98 99 100
-    entoncesTK (309) 85 86
-    siNoSiTK (310) 86
-    inicioArrayTK (311) 26 75
-    finArrayTK (312) 26 75
-    puntoTK (313) 1 74
-    parentesisAbiertoTK (314) 55 66 94 95 101 102
-    parentesisCerradoTK (315) 55 66 94 95 101 102
-    masTK (316) 49 59
-    menosTK (317) 50 58
-    porTK (318) 51
-    divisionTK (319) 52
-    menorTK (320) 67
-    mayorTK (321) 68
-    menorIgualTK (322) 72
-    mayorIgualTK (323) 71
-    distintoTK (324) 70
-    punteroTK (325)
+    puntoYComaTK (262) 15 16 17 18 33 35 39
+    accionTK (263) 92
+    algoritmoTK (264) 1
+    booleanoTK (265) 22
+    cadenaTK (266) 24
+    caracterTK (267) 23
+    continuarTK (268) 79
+    deTK (269) 26
+    devTK (270) 93 95
+    divTK (271) 54
+    entTK (272) 44 98
+    enteroTK (273) 20
+    entradaSalidaTK (274) 100
+    faccionTK (275) 92
+    falgoritmoTK (276) 1
+    ffuncionTK (277) 93
+    fmientrasTK (278) 90
+    fparaTK (279) 91
+    fsiTK (280) 85
+    ftipoTK (281) 15
+    ftuplaTK (282) 25
+    funcionTK (283) 93
+    fvarTK (284) 17
+    hacerTK (285) 90 91
+    hastaTK (286) 91
+    mientrasTK (287) 90
+    modTK (288) 53
+    noTK (289) 62
+    oTK (290) 61
+    paraTK (291) 91
+    realTK (292) 21
+    refTK (293) 29 76
+    salTK (294) 45 99
+    siTK (295) 85
+    tablaTK (296) 26
+    tipoTK (297) 15
+    tuplaTK (298) 25
+    varTK (299) 17
+    yTK (300) 60
+    identificadorTK <cadena> (301) 1 18 27 33 37 38 39 73 91 94 95 101 102
+    comentarioTK (302) 2 3
+    asignacionTK (303) 84 91
+    composicionSecuencialTK (304) 1 77 94 95 96
+    separadorTK (305) 37 103
+    subrangoTK (306) 26 28
+    tipoVariableTK (307) 35 39 98 99 100
+    entoncesTK (308) 85 86
+    siNoSiTK (309) 86
+    inicioArrayTK (310) 26 75
+    finArrayTK (311) 26 75
+    puntoTK (312) 1 74
+    parentesisAbiertoTK (313) 55 66 94 95 101 102
+    parentesisCerradoTK (314) 55 66 94 95 101 102
+    masTK (315) 49 59
+    menosTK (316) 50 58
+    porTK (317) 51
+    divisionTK (318) 52
+    menorTK (319) 67
+    mayorTK (320) 68
+    menorIgualTK (321) 72
+    mayorIgualTK (322) 71
+    distintoTK (323) 70
 
 
 No terminales con las reglas donde aparecen
 
-    $accept (71)
+    $accept (69)
         on left: 0
-    desc_algoritmoV (72)
+    desc_algoritmoV (70)
         on left: 1
         on right: 0
-    cabecera_algV (73)
+    cabecera_algV (71)
         on left: 2
         on right: 1
-    bloque_algV (74)
+    bloque_algV (72)
         on left: 3
         on right: 1
-    decl_globalesV (75)
+    decl_globalesV (73)
         on left: 4 5 6
         on right: 2 4 5
-    decl_a_fV (76)
+    decl_a_fV (74)
         on left: 7 8 9
         on right: 2 7 8
-    bloqueV (77)
+    bloqueV (75)
         on left: 10
         on right: 3 92 93
-    declaracionesV (78)
+    declaracionesV (76)
         on left: 11 12 13 14
         on right: 10 11 12 13
-    declaracion_tipoV (79)
+    declaracion_tipoV (77)
         on left: 15
         on right: 4 11
-    declaracion_cteV (80)
+    declaracion_cteV (78)
         on left: 16
         on right: 5 12
-    declaracion_varV (81)
+    declaracion_varV (79)
         on left: 17
         on right: 13
-    lista_d_tipoV (82)
+    lista_d_tipoV (80)
         on left: 18 19
         on right: 15 18
-    tipo_baseV (83)
+    tipo_baseV (81)
         on left: 20 21 22 23 24
         on right: 30
-    d_tipoV (84)
+    d_tipoV (82)
         on left: 25 26 27 28 29 30
         on right: 18 26 29 35 39 95 98 99 100
-    expresion_tV (85)
+    expresion_tV (83)
         on left: 31 32
         on right: 26 28
-    lista_d_cteV (86)
+    lista_d_cteV (84)
         on left: 33 34
         on right: 16 33
-    lista_d_varV (87)
+    lista_d_varV (85)
         on left: 35 36
         on right: 17 35 44 45 95
-    lista_idV (88)
+    lista_idV (86)
         on left: 37 38
         on right: 35 37 98 99 100
-    lista_camposV (89)
+    lista_camposV (87)
         on left: 39 40
         on right: 25 39
-    decl_ent_salV (90)
+    decl_ent_salV (88)
         on left: 41 42 43
         on right: 2
-    decl_entV (91)
+    decl_entV (89)
         on left: 44
         on right: 41 42
-    decl_salV (92)
+    decl_salV (90)
         on left: 45
         on right: 42 43
-    expresionV (93)
+    expresionV (91)
         on left: 46 47 48
         on right: 31 65 75 84 85 86 90 91 93 103 104
-    exp_aV (94)
+    exp_aV (92)
         on left: 49 50 51 52 53 54 55 56 57 58 59
         on right: 46 49 50 51 52 53 54 55 58 59
-    exp_bV (95)
+    exp_bV (93)
         on left: 60 61 62 63 64 65 66
         on right: 47 60 61 62 66
-    oprelV (96)
+    oprelV (94)
         on left: 67 68 69 70 71 72
         on right: 65
-    operandoV (97)
+    operandoV (95)
         on left: 73 74 75 76
         on right: 56 63 74 75 76 84
-    instruccionesV (98)
+    instruccionesV (96)
         on left: 77 78
         on right: 10 77 85 86 90 91
-    instruccionV (99)
+    instruccionV (97)
         on left: 79 80 81 82 83
         on right: 77 78
-    asignacionV (100)
+    asignacionV (98)
         on left: 84
         on right: 80
-    alternativaV (101)
+    alternativaV (99)
         on left: 85
         on right: 81
-    lista_opcionesV (102)
+    lista_opcionesV (100)
         on left: 86 87
         on right: 85 86
-    iteracionV (103)
+    iteracionV (101)
         on left: 88 89
         on right: 82
-    it_cota_expV (104)
+    it_cota_expV (102)
         on left: 90
         on right: 89
-    it_cota_fijaV (105)
+    it_cota_fijaV (103)
         on left: 91
         on right: 88
-    accion_dV (106)
+    accion_dV (104)
         on left: 92
         on right: 7
-    funcion_dV (107)
+    funcion_dV (105)
         on left: 93
         on right: 8
-    a_cabeceraV (108)
+    a_cabeceraV (106)
         on left: 94
         on right: 92
-    f_cabeceraV (109)
+    f_cabeceraV (107)
         on left: 95
         on right: 93
-    d_par_formV (110)
+    d_par_formV (108)
         on left: 96 97
         on right: 94 96
-    d_p_formV (111)
+    d_p_formV (109)
         on left: 98 99 100
         on right: 96
-    accion_llV (112)
+    accion_llV (110)
         on left: 101
         on right: 83
-    funcion_llV (113)
+    funcion_llV (111)
         on left: 102
         on right: 48
-    l_llV (114)
+    l_llV (112)
         on left: 103 104
         on right: 101 102 103
 

@@ -58,70 +58,68 @@ extern int yydebug;
     literalTK = 259,               /* literalTK  */
     fconstTK = 260,                /* fconstTK  */
     igualTK = 261,                 /* igualTK  */
-    nombreCteTK = 262,             /* nombreCteTK  */
-    puntoYComaTK = 263,            /* puntoYComaTK  */
-    accionTK = 264,                /* accionTK  */
-    algoritmoTK = 265,             /* algoritmoTK  */
-    booleanoTK = 266,              /* booleanoTK  */
-    cadenaTK = 267,                /* cadenaTK  */
-    caracterTK = 268,              /* caracterTK  */
-    continuarTK = 269,             /* continuarTK  */
-    deTK = 270,                    /* deTK  */
-    devTK = 271,                   /* devTK  */
-    divTK = 272,                   /* divTK  */
-    entTK = 273,                   /* entTK  */
-    enteroTK = 274,                /* enteroTK  */
-    entradaSalidaTK = 275,         /* entradaSalidaTK  */
-    faccionTK = 276,               /* faccionTK  */
-    falgoritmoTK = 277,            /* falgoritmoTK  */
-    ffuncionTK = 278,              /* ffuncionTK  */
-    fmientrasTK = 279,             /* fmientrasTK  */
-    fparaTK = 280,                 /* fparaTK  */
-    fsiTK = 281,                   /* fsiTK  */
-    ftipoTK = 282,                 /* ftipoTK  */
-    ftuplaTK = 283,                /* ftuplaTK  */
-    funcionTK = 284,               /* funcionTK  */
-    fvarTK = 285,                  /* fvarTK  */
-    hacerTK = 286,                 /* hacerTK  */
-    hastaTK = 287,                 /* hastaTK  */
-    mientrasTK = 288,              /* mientrasTK  */
-    modTK = 289,                   /* modTK  */
-    noTK = 290,                    /* noTK  */
-    oTK = 291,                     /* oTK  */
-    paraTK = 292,                  /* paraTK  */
-    realTK = 293,                  /* realTK  */
-    refTK = 294,                   /* refTK  */
-    salTK = 295,                   /* salTK  */
-    siTK = 296,                    /* siTK  */
-    tablaTK = 297,                 /* tablaTK  */
-    tipoTK = 298,                  /* tipoTK  */
-    tuplaTK = 299,                 /* tuplaTK  */
-    varTK = 300,                   /* varTK  */
-    yTK = 301,                     /* yTK  */
-    identificadorTK = 302,         /* identificadorTK  */
-    comentarioTK = 303,            /* comentarioTK  */
-    asignacionTK = 304,            /* asignacionTK  */
-    composicionSecuencialTK = 305, /* composicionSecuencialTK  */
-    separadorTK = 306,             /* separadorTK  */
-    subrangoTK = 307,              /* subrangoTK  */
-    tipoVariableTK = 308,          /* tipoVariableTK  */
-    entoncesTK = 309,              /* entoncesTK  */
-    siNoSiTK = 310,                /* siNoSiTK  */
-    inicioArrayTK = 311,           /* inicioArrayTK  */
-    finArrayTK = 312,              /* finArrayTK  */
-    puntoTK = 313,                 /* puntoTK  */
-    parentesisAbiertoTK = 314,     /* parentesisAbiertoTK  */
-    parentesisCerradoTK = 315,     /* parentesisCerradoTK  */
-    masTK = 316,                   /* masTK  */
-    menosTK = 317,                 /* menosTK  */
-    porTK = 318,                   /* porTK  */
-    divisionTK = 319,              /* divisionTK  */
-    menorTK = 320,                 /* menorTK  */
-    mayorTK = 321,                 /* mayorTK  */
-    menorIgualTK = 322,            /* menorIgualTK  */
-    mayorIgualTK = 323,            /* mayorIgualTK  */
-    distintoTK = 324,              /* distintoTK  */
-    punteroTK = 325                /* punteroTK  */
+    puntoYComaTK = 262,            /* puntoYComaTK  */
+    accionTK = 263,                /* accionTK  */
+    algoritmoTK = 264,             /* algoritmoTK  */
+    booleanoTK = 265,              /* booleanoTK  */
+    cadenaTK = 266,                /* cadenaTK  */
+    caracterTK = 267,              /* caracterTK  */
+    continuarTK = 268,             /* continuarTK  */
+    deTK = 269,                    /* deTK  */
+    devTK = 270,                   /* devTK  */
+    divTK = 271,                   /* divTK  */
+    entTK = 272,                   /* entTK  */
+    enteroTK = 273,                /* enteroTK  */
+    entradaSalidaTK = 274,         /* entradaSalidaTK  */
+    faccionTK = 275,               /* faccionTK  */
+    falgoritmoTK = 276,            /* falgoritmoTK  */
+    ffuncionTK = 277,              /* ffuncionTK  */
+    fmientrasTK = 278,             /* fmientrasTK  */
+    fparaTK = 279,                 /* fparaTK  */
+    fsiTK = 280,                   /* fsiTK  */
+    ftipoTK = 281,                 /* ftipoTK  */
+    ftuplaTK = 282,                /* ftuplaTK  */
+    funcionTK = 283,               /* funcionTK  */
+    fvarTK = 284,                  /* fvarTK  */
+    hacerTK = 285,                 /* hacerTK  */
+    hastaTK = 286,                 /* hastaTK  */
+    mientrasTK = 287,              /* mientrasTK  */
+    modTK = 288,                   /* modTK  */
+    noTK = 289,                    /* noTK  */
+    oTK = 290,                     /* oTK  */
+    paraTK = 291,                  /* paraTK  */
+    realTK = 292,                  /* realTK  */
+    refTK = 293,                   /* refTK  */
+    salTK = 294,                   /* salTK  */
+    siTK = 295,                    /* siTK  */
+    tablaTK = 296,                 /* tablaTK  */
+    tipoTK = 297,                  /* tipoTK  */
+    tuplaTK = 298,                 /* tuplaTK  */
+    varTK = 299,                   /* varTK  */
+    yTK = 300,                     /* yTK  */
+    identificadorTK = 301,         /* identificadorTK  */
+    comentarioTK = 302,            /* comentarioTK  */
+    asignacionTK = 303,            /* asignacionTK  */
+    composicionSecuencialTK = 304, /* composicionSecuencialTK  */
+    separadorTK = 305,             /* separadorTK  */
+    subrangoTK = 306,              /* subrangoTK  */
+    tipoVariableTK = 307,          /* tipoVariableTK  */
+    entoncesTK = 308,              /* entoncesTK  */
+    siNoSiTK = 309,                /* siNoSiTK  */
+    inicioArrayTK = 310,           /* inicioArrayTK  */
+    finArrayTK = 311,              /* finArrayTK  */
+    puntoTK = 312,                 /* puntoTK  */
+    parentesisAbiertoTK = 313,     /* parentesisAbiertoTK  */
+    parentesisCerradoTK = 314,     /* parentesisCerradoTK  */
+    masTK = 315,                   /* masTK  */
+    menosTK = 316,                 /* menosTK  */
+    porTK = 317,                   /* porTK  */
+    divisionTK = 318,              /* divisionTK  */
+    menorTK = 319,                 /* menorTK  */
+    mayorTK = 320,                 /* mayorTK  */
+    menorIgualTK = 321,            /* menorIgualTK  */
+    mayorIgualTK = 322,            /* mayorIgualTK  */
+    distintoTK = 323               /* distintoTK  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -130,13 +128,13 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 110 "parser.y"
+#line 103 "parser.y"
 
 	char* cadena;
 	LiteralT literal;
 	int entero;
 
-#line 140 "parser.tab.h"
+#line 138 "parser.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
