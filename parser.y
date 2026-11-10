@@ -19,7 +19,6 @@
 %token <literal> literalTK
 %token fconstTK
 %token igualTK
-%token composicionSecuencialTK
 
  // Palabras reservadas
 %token accionTK
