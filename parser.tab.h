@@ -58,7 +58,7 @@ extern int yydebug;
     literalTK = 259,               /* literalTK  */
     fconstTK = 260,                /* fconstTK  */
     igualTK = 261,                 /* igualTK  */
-    puntoYComaTK = 262,            /* puntoYComaTK  */
+    composicionSecuencialTK = 262, /* composicionSecuencialTK  */
     accionTK = 263,                /* accionTK  */
     algoritmoTK = 264,             /* algoritmoTK  */
     booleanoTK = 265,              /* booleanoTK  */
@@ -100,26 +100,30 @@ extern int yydebug;
     identificadorTK = 301,         /* identificadorTK  */
     comentarioTK = 302,            /* comentarioTK  */
     asignacionTK = 303,            /* asignacionTK  */
-    composicionSecuencialTK = 304, /* composicionSecuencialTK  */
-    separadorTK = 305,             /* separadorTK  */
-    subrangoTK = 306,              /* subrangoTK  */
-    tipoVariableTK = 307,          /* tipoVariableTK  */
-    entoncesTK = 308,              /* entoncesTK  */
-    siNoSiTK = 309,                /* siNoSiTK  */
-    inicioArrayTK = 310,           /* inicioArrayTK  */
-    finArrayTK = 311,              /* finArrayTK  */
-    puntoTK = 312,                 /* puntoTK  */
-    parentesisAbiertoTK = 313,     /* parentesisAbiertoTK  */
-    parentesisCerradoTK = 314,     /* parentesisCerradoTK  */
-    masTK = 315,                   /* masTK  */
-    menosTK = 316,                 /* menosTK  */
-    porTK = 317,                   /* porTK  */
-    divisionTK = 318,              /* divisionTK  */
-    menorTK = 319,                 /* menorTK  */
-    mayorTK = 320,                 /* mayorTK  */
-    menorIgualTK = 321,            /* menorIgualTK  */
-    mayorIgualTK = 322,            /* mayorIgualTK  */
-    distintoTK = 323               /* distintoTK  */
+    separadorTK = 304,             /* separadorTK  */
+    subrangoTK = 305,              /* subrangoTK  */
+    tipoVariableTK = 306,          /* tipoVariableTK  */
+    entoncesTK = 307,              /* entoncesTK  */
+    siNoSiTK = 308,                /* siNoSiTK  */
+    inicioArrayTK = 309,           /* inicioArrayTK  */
+    finArrayTK = 310,              /* finArrayTK  */
+    puntoTK = 311,                 /* puntoTK  */
+    parentesisAbiertoTK = 312,     /* parentesisAbiertoTK  */
+    parentesisCerradoTK = 313,     /* parentesisCerradoTK  */
+    masTK = 314,                   /* masTK  */
+    menosTK = 315,                 /* menosTK  */
+    porTK = 316,                   /* porTK  */
+    divisionTK = 317,              /* divisionTK  */
+    menorTK = 318,                 /* menorTK  */
+    mayorTK = 319,                 /* mayorTK  */
+    menorIgualTK = 320,            /* menorIgualTK  */
+    mayorIgualTK = 321,            /* mayorIgualTK  */
+    distintoTK = 322,              /* distintoTK  */
+    literalEnteroTK = 323,         /* literalEnteroTK  */
+    literalRealTK = 324,           /* literalRealTK  */
+    literalCaracterTK = 325,       /* literalCaracterTK  */
+    literalCadenaTK = 326,         /* literalCadenaTK  */
+    literalBooleanoTK = 327        /* literalBooleanoTK  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -128,13 +132,16 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 103 "parser.y"
+#line 106 "parser.y"
 
 	char* cadena;
-	LiteralT literal;
 	int entero;
+	float real;
+	char caracter;
+	ValorBooleanoT booleano;
+	LiteralT literal;
 
-#line 138 "parser.tab.h"
+#line 145 "parser.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

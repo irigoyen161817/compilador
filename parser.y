@@ -94,6 +94,7 @@
 %token <real>     literalRealTK
 %token <caracter> literalCaracterTK
 %token <cadena>   literalCadenaTK
+%token <booleano> literalBooleanoTK
  //PARTE 2.3: Definiciones (algunas innecearias) de prioridades
 
 %nonassoc constTK //hago no asociativo y de baja prioridad a constTK
