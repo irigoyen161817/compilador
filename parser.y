@@ -121,6 +121,10 @@
  //zona producciones
 
  //4.1 (axioma: es la primera produccion)
+
+nombre_varV: identificadorTK {}
+	| identificador_booleanoTK {}
+	;
 desc_algoritmoV: algoritmoTK identificadorTK composicionSecuencialTK cabecera_algV bloque_algV falgoritmoTK puntoTK {}
 	;
 cabecera_algV: decl_globalesV decl_a_fV decl_ent_salV comentarioTK {}
@@ -179,16 +183,16 @@ literalV: literalEnteroTK   {}
         | literalBooleanoTK {}
         ;
  //4.1.3
-lista_d_cteV: identificadorTK igualTK literalV composicionSecuencialTK lista_d_cteV {}
+lista_d_cteV: nombre_varV igualTK literalV composicionSecuencialTK lista_d_cteV {}
 	| /* vacio */ {}
 	;
 lista_d_varV: lista_idV tipoVariableTK d_tipoV composicionSecuencialTK lista_d_varV {}
 	| /* vacio */ {}
 	;
-lista_idV: identificadorTK separadorTK lista_idV {}
-	| identificadorTK {}
+lista_idV: nombre_varV separadorTK lista_idV {}
+	| nombre_varV {}
 	;
-lista_camposV: identificadorTK tipoVariableTK d_tipoV composicionSecuencialTK lista_camposV {}
+lista_camposV: nombre_varV tipoVariableTK d_tipoV composicionSecuencialTK lista_camposV {}
 	| /* vacio */ {}
 	;
 decl_ent_salV: decl_entV {}
@@ -256,6 +260,7 @@ instruccionV: continuarTK {}
 	| accion_llV {}
 	;
 asignacionV: operandoV asignacionTK expresionV {}
+	| operando_booleanoV asignacionTK expresionV {}
 	;
 alternativaV: siTK expresionV entoncesTK instruccionesV lista_opcionesV fsiTK {}
 	;
