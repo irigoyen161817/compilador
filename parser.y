@@ -239,6 +239,12 @@ operandoV: identificadorTK {}
 	| operandoV refTK {}
 	;
 
+operando_booleanoV: identificadorBooleanoTK {}
+	| operando_booleanoV puntoTK operando_booleanoV {}
+	| operando_booleanoV inicioArrayTK expresionV finArrayTK {}
+	| operando_booleanoV refTK {}
+	;
+
  //4.1.5
 instruccionesV: instruccionV composicionSecuencialTK instruccionesV {}
 	| instruccionV {}
