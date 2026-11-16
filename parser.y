@@ -100,6 +100,9 @@
 %nonassoc constTK //hago no asociativo y de baja prioridad a constTK
 %right fconstTK //hago fcosntTK es mas prioritario que constTK y asociativo a derecha
 %left composicionSecuencialTK //Hago muy prioritario y asociativo a izquierdas al ;
+%left oTK
+%left yTK
+%right noTK //Hago noTK muy prioritario y asociativo a derecha
 
  //PARTE 2.3: Creamos el union necesario para valores de flex y traducciones de bison
 
@@ -245,9 +248,6 @@ operandoV: identificadorTK {}
 	;
 
 operando_booleanoV: identificadorBooleanoTK {}
-	| operandoV puntoTK identificadorBooleanoTK {}
-	| operando_booleanoV inicioArrayTK expresionV finArrayTK {}
-	| operando_booleanoV refTK {}
 	;
 
  //4.1.5
