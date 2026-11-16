@@ -122,9 +122,7 @@
 
  //4.1 (axioma: es la primera produccion)
 
-nombre_varV: identificadorTK {}
-	| identificador_booleanoTK {}
-	;
+
 desc_algoritmoV: algoritmoTK identificadorTK composicionSecuencialTK cabecera_algV bloque_algV falgoritmoTK puntoTK {}
 	;
 cabecera_algV: decl_globalesV decl_a_fV decl_ent_salV comentarioTK {}
@@ -192,6 +190,9 @@ lista_d_varV: lista_idV tipoVariableTK d_tipoV composicionSecuencialTK lista_d_v
 lista_idV: nombre_varV separadorTK lista_idV {}
 	| nombre_varV {}
 	;
+nombre_varV: identificadorTK {}
+	| identificadorBooleanoTK {}
+	;
 lista_camposV: nombre_varV tipoVariableTK d_tipoV composicionSecuencialTK lista_camposV {}
 	| /* vacio */ {}
 	;
@@ -225,7 +226,7 @@ exp_aV: exp_aV masTK exp_aV {}
 exp_bV: exp_bV yTK exp_bV {}
 	| exp_bV oTK exp_bV {}
 	| noTK exp_bV {}
-	| operandoV {}
+	| operando_booleanoV {}
 	| literalBooleanoTK {}
 	| expresionV oprelV expresionV {}
 	| parentesisAbiertoTK exp_bV parentesisCerradoTK {}
@@ -244,7 +245,7 @@ operandoV: identificadorTK {}
 	;
 
 operando_booleanoV: identificadorBooleanoTK {}
-	| operando_booleanoV puntoTK operando_booleanoV {}
+	| operandoV puntoTK identificadorBooleanoTK {}
 	| operando_booleanoV inicioArrayTK expresionV finArrayTK {}
 	| operando_booleanoV refTK {}
 	;
