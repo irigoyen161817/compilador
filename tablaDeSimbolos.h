@@ -1,5 +1,5 @@
-#ifndef TABLA_DE_CONSTANTES_H
-#define TABLA_DE_CONSTANTES_H
+#ifndef TABLA_DE_SIMBOLOS_H
+#define TABLA_DE_SIMBOLOS_H
 
 #define NUMERO_ELEMENTOS_TABLA 200
 
@@ -9,10 +9,12 @@
 
 typedef struct elementoTabla{
     char* nombre;
-    nombreDeTipoT tipo;
+    NombreDeTipoT tipo;
 } ElementoTabla;
 
-typedef struct tabladeConstantes {
+typedef struct tablaDeSimbolos {
     ElementoTabla tabla[NUMERO_ELEMENTOS_TABLA];
     int indiceElementoLibre;
-} TablaDeConstantes; 
+} TablaDeSimbolos;
+
+#endif
