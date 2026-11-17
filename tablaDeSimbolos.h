@@ -17,4 +17,6 @@ typedef struct tablaDeSimbolos {
     int indiceElementoLibre;
 } TablaDeSimbolos;
 
+TablaDeSimbolos nuevaTablaDeSimbolos(void);
+
 #endif
